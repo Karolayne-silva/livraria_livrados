@@ -1,5 +1,5 @@
 
-public class Produto {
+public abstract class Produto {
 
 	private int id;
 	private double preco;
@@ -8,7 +8,6 @@ public class Produto {
 	private String dataRegistro;
 	private int quantidade;
 	private String dataLancamento;
-	private boolean disponivel;
 	private String genero;
 
 	public Produto(int id, double preco, String nome, String descricao, String dataRegistro, int quantidade, String dataLancamento, String genero){
@@ -106,15 +105,6 @@ public class Produto {
 		this.dataLancamento = dataLancamento;
 	}
 
-
-	public boolean getDisponivel() {
-		return disponivel;
-	}
-
-
-	public void setDisponivel(boolean disponivel) {
-		this.disponivel = disponivel;
-	}
 
 
 	public String getGenero() {
