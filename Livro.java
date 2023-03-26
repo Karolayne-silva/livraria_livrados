@@ -60,6 +60,17 @@ public class livro extends Produto {
 			return "livro" + super.toString() + "isbn13=" + isbn13 + ", autor=" + autor + ", editora=" + editora + ", sinopse=" + sinopse + "]";
 		}
 		
-		
+		public void cadastrar() {
+			
+		}
+		public void alterar() {
+			
+		}
+		public void deletar() {
+			
+		}
+		public void buscar() {
+			
+		}
 
 	}
