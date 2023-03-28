@@ -7,7 +7,9 @@ import java.sql.SQLException;
 
 /**
  *
- * @author kiki1
+ * @author Karolayne Silva
+ * @author Erika Santos
+ * @author Gilmar Adrian
  */
 // classe usada para conectar e desconectar o banco de dados
 
