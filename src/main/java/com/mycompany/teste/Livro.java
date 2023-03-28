@@ -23,6 +23,10 @@ public class Livro extends Produto {
 			
     }
 
+    Livro() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 	public String getIsbn13() {
 			return isbn13;
 	}
