@@ -21,8 +21,8 @@ public class LivroDAO {
     
     public void cadastrar(Livro livro){
         String sql = "INSERT INTO livros(id, preco, nome, descricao, dataRegistro, quantidade, dataLancamento, genero, isbn13, autor, editora, sinopse) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-        Connection conn = null;
-        PreparedStatement pstm = null;
+        Connection conn;
+        PreparedStatement pstm;
         
         try{
             //cria uma conexao com o bd
@@ -45,7 +45,7 @@ public class LivroDAO {
             pstm.setString(12, livro.getSinopse());
             
             pstm.execute();
-            System.out.println("Contato salvo com sucesso");
+            System.out.println("Livro salvo com sucesso");
         }catch (SQLException e){
             e.printStackTrace();
     }
