@@ -1,3 +1,5 @@
+package DTO;
+
 public class ItemVenda {
     private int quantidade;
     private double desconto; // padrão = 0.0
