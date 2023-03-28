@@ -1,4 +1,4 @@
-package livraria_livrados;
+package DTO;
 
 public class livro extends Produto {
 
