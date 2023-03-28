@@ -18,11 +18,11 @@ public class Teste {
         
         //atualizar 
         Livro l1 = new Livro(4, 25.80, "jorge", "lala", "23/12/2026", 10, "12/12/2021", "suspense", "343233", "karola", "no sei", "ai que delicia");
-        livroDao.update(l1);
+        // livroDao.update(l1);
         
-        //deletando o contato
+        //deletando o livro
         
-        livroDao.deleteByID(4);
+        // livroDao.deleteByID(4);
         
     }
 }
