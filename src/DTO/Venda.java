@@ -1,3 +1,5 @@
+package DTO;
+
 public class ItemVenda {
     private String vendedor;
     private String dataVenda;
