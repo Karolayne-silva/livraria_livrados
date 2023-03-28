@@ -75,7 +75,7 @@ public class LivroDAO {
                 System.out.println(rs.getInt("Id"));
                 System.out.println(rs.getString("nome"));
                 
-                Livro 1 = new Livro();
+//                Livro 1 = new Livro();
 //                l.setId(rs.getInt("id"));
 //                l.setPreco(rs.getDouble("preco"));
 //                l.setNome(rs.getString("nome"));
