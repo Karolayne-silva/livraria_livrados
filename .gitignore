@@ -2,3 +2,4 @@
 /target/
 *.class
 *.class
+src/main/java/com/mycompany/teste/Conexao.java
