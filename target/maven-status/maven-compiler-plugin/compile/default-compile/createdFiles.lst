@@ -1,2 +1,5 @@
-.netbeans_automatic_build
+com\mycompany\teste\Produto.class
 com\mycompany\teste\Conexao.class
+com\mycompany\teste\LivroDAO.class
+com\mycompany\teste\Program.class
+com\mycompany\teste\Livro.class
