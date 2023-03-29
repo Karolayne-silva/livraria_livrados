@@ -31,6 +31,7 @@ public class Teste {
             System.out.println("[2] ATUALIZAR");
             System.out.println("[3] DELETAR");
             System.out.println("[4] MOSTRAR TODOS OS LIVROS");
+            System.out.println("[6] PESQUISAR POE NOME - EXCLUIR DEPOIS");
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
             int numero = sc.nextInt();
 
@@ -117,7 +118,23 @@ public class Teste {
                     livro.mostrarLivros();
                     break;
                 }
-                
+                case 6 -> {
+                    System.out.println("PESQUISAR PELO NOME DO LIVRO");
+                    System.out.print("Digite o nome do livro a ser procurado: ");
+                    sc.nextLine();
+                    String inp_nome = sc.nextLine();
+
+                    Livro dao_livro = new Livro();
+                    LivroDAO teste_livro = new LivroDAO();
+                    dao_livro = teste_livro.buscarLivroNome(inp_nome);
+                    
+//                    Livro obj_livro = new Livro(0, 0.0, inp_nome, "", "", "", "", "", "", "", "");
+//                    obj_livro = dao_livro.buscarLivroNome(inp_nome);
+//                    dao_livro.buscarLivroNome(obj_livro.getNome());
+
+                    System.out.println("Livro: " + teste_livro);
+                }
+
                 default -> {
                     System.out.println("Digite um número válido");
                 }
