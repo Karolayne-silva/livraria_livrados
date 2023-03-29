@@ -25,7 +25,7 @@ public class Conexao {
     public static Connection conectar(){
         
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
              //cria a conexao com o banco de dados
             conn = DriverManager.getConnection("jdbc:mysql://localhost/livraria_livrados", "root", "teste");
             

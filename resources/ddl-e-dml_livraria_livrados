@@ -116,6 +116,29 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+-- -----------------------------------------------------
+-- Alterações na tabela de produto
+-- -----------------------------------------------------
+
 ALTER TABLE `livraria_livrados`.`produto` 
 CHANGE COLUMN `dataRegistro` `dataRegistro` VARCHAR(40) NULL DEFAULT NULL ,
 CHANGE COLUMN `dataLancamento` `dataLancamento` VARCHAR(40) NULL DEFAULT NULL ;
+
+-- -----------------------------------------------------
+-- Inserções na tabela `livraria_livrados`.`produto`
+-- -----------------------------------------------------
+
+INSERT INTO `livraria_livrados`.`produto` (`id`,`preco`,`nome`,`descricao`,`dataRegistro`,`dataLancamento`,`genero`) VALUES (1,20.00,'A Hora da Estrela','Caos, pânico e destruição','2023-03-26','1995-03-30','Romance');
+INSERT INTO `livraria_livrados`.`produto` (`id`,`preco`,`nome`,`descricao`,`dataRegistro`,`dataLancamento`,`genero`) VALUES (2,35.40,'Sidarta','Careca budista','2023-03-17','1803-04-02','Religioso');
+INSERT INTO `livraria_livrados`.`produto` (`id`,`preco`,`nome`,`descricao`,`dataRegistro`,`dataLancamento`,`genero`) VALUES (3,37.30,'Mão de Jedi','Perdeu tudo!!!!','2023-03-28','1980-05-03','Geek');
+INSERT INTO `livraria_livrados`.`produto` (`id`,`preco`,`nome`,`descricao`,`dataRegistro`,`dataLancamento`,`genero`) VALUES (4,48.00,'Dom Casmurro','Capitu não traiu!!!!!!','2023-03-27','1898-11-09','Romance');
+
+-- -----------------------------------------------------
+-- Inserções na tabela `livraria_livrados`.`livro`
+-- -----------------------------------------------------
+
+INSERT INTO `` (`Produto_id`,`isbn13`,`autor`,`editora`,`sinopse`) VALUES (1,'1234567891234','Clarice Lispector','Cerpe','Brasília amarela');
+INSERT INTO `` (`Produto_id`,`isbn13`,`autor`,`editora`,`sinopse`) VALUES (2,'9897132981739','Bodidharma','Buddah','Carecas da paz');
+INSERT INTO `` (`Produto_id`,`isbn13`,`autor`,`editora`,`sinopse`) VALUES (3,'9874631234132','Yoda Tano','Jorge Luscas','Velozes e furiosos no espaço');
+INSERT INTO `` (`Produto_id`,`isbn13`,`autor`,`editora`,`sinopse`) VALUES (4,'3213123211231','Machado de Assis','Quincas Borba','Caba chato, merecia levar gaia');
+
