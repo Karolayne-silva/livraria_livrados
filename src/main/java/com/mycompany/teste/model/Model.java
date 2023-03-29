@@ -31,7 +31,7 @@ public class Model extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
-        return dados.length;
+        return dados.size;
     }
 
     @Override
@@ -40,35 +40,29 @@ public class Model extends AbstractTableModel {
     }
 
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
-        return dados;
+    public Object getValueAt(int linha, int coluna) {
+        switch(coluna){
+            case 0:
+                return dados.get(linha).getNome();
+            case 1:
+                return dados.get(linha).getPreco();
+            case 2:
+                return dados.get(linha).getDescricao();
+            case 3:
+                return dados.get(linha).getDataRegistro();
+            case 4:
+                return dados.get(linha).getDataLancamento();
+            case 5:
+                return dados.get(linha).getGenero();
+            case 6:
+                return dados.get(linha).getIsbn13();
+            case 7:
+                return dados.get(linha).getAutor();
+            case 8:
+                return dados.get(linha).getEditora();
+            case 9:
+                return dados.get(linha).getSinopse();
+        }
+        return null;
     }
-
-}
-
-
-public class MyTableModel extends AbstractTableModel {
-    private String[] columnNames = {"Column 1", "Column 2", "Column 3"};
-    private Object[][] data = {
-        {"Row 1, Col 1", "Row 1, Col 2", "Row 1, Col 3"},
-        {"Row 2, Col 1", "Row 2, Col 2", "Row 2, Col 3"},
-        {"Row 3, Col 1", "Row 3, Col 2", "Row 3, Col 3"},
-        {"Row 4, Col 1", "Row 4, Col 2", "Row 4, Col 3"}
-    };
-
-//    public int getColumnCount() {
-//        return columnNames.length;
-//    }
-//
-//    public int getRowCount() {
-//        return data.length;
-//    }
-
-    public String getColumnName(int col) {
-        return columnNames[col];
-    }
-
-//    public Object getValueAt(int row, int col) {
-//        return data[row][col];
-//    }
 }
