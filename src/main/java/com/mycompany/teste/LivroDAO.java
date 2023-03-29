@@ -83,24 +83,6 @@ public class LivroDAO {
                 String editora = rs.getString("editora");
                 String sinopse = rs.getString("sinopse");
 
-                
-                System.out.println(rs.getInt("Id"));
-                System.out.println(rs.getString("nome"));
-                
-//                Livro 1 = new Livro();
-//                l.setId(rs.getInt("id"));
-//                l.setPreco(rs.getDouble("preco"));
-//                l.setNome(rs.getString("nome"));
-//                l.setDescricao(rs.getString("descricao"));
-//                l.setDataRegistro(rs.getString("dataRegistro"));
-//                l.setDataLancamento(rs.getString("dataLancamento"));
-//                l.setGenero(rs.getString("genero"));
-//                l.setIsbn13(rs.getString("isbn13"));
-//                l.setAutor(rs.getString("autor"));
-//                l.setEditora(rs.getString("editora"));
-//                l.setSinopse(rs.getString("sinopse"));
-
-
                 Livro obj_livro = new Livro(id, preco, nome, descricao, dataRegistro, dataLancamento, genero, isbn13, autor, editora, sinopse);
 
                 System.out.println(obj_livro.getId());
@@ -116,8 +98,6 @@ public class LivroDAO {
                 System.out.println(obj_livro.getSinopse());
 
                 arl_livros.add(cont, obj_livro);
-//                Livro 1 = new Livro();
-//                arl_livros.add(l);
                 cont++;
             }
             System.out.println(arl_livros);

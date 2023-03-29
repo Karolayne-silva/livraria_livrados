@@ -12,7 +12,9 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author EDS
+ * @author Erika Santos
+ * @author Karolayne Silva
+ * @author Gilmar Adrian
  */
 public class Model extends AbstractTableModel {
 

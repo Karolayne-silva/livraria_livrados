@@ -6,7 +6,9 @@ package com.mycompany.teste;
 
 /**
  *
- * @author kiki1
+ * @author Erika Santos
+ * @author Karolayne Silva
+ * @author Gilmar Adrian
  */
 public class Livro extends Produto {
 
