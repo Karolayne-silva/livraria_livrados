@@ -70,6 +70,7 @@ public class LivroDAO {
             int cont = 0;
 
             while (rs.next()) {
+                
                 int id = rs.getInt("Produto_id");
                 double preco = rs.getDouble("preco");
                 String nome = rs.getString("nome");
@@ -81,6 +82,24 @@ public class LivroDAO {
                 String autor = rs.getString("autor");
                 String editora = rs.getString("editora");
                 String sinopse = rs.getString("sinopse");
+
+                
+                System.out.println(rs.getInt("Id"));
+                System.out.println(rs.getString("nome"));
+                
+//                Livro 1 = new Livro();
+//                l.setId(rs.getInt("id"));
+//                l.setPreco(rs.getDouble("preco"));
+//                l.setNome(rs.getString("nome"));
+//                l.setDescricao(rs.getString("descricao"));
+//                l.setDataRegistro(rs.getString("dataRegistro"));
+//                l.setDataLancamento(rs.getString("dataLancamento"));
+//                l.setGenero(rs.getString("genero"));
+//                l.setIsbn13(rs.getString("isbn13"));
+//                l.setAutor(rs.getString("autor"));
+//                l.setEditora(rs.getString("editora"));
+//                l.setSinopse(rs.getString("sinopse"));
+
 
                 Livro obj_livro = new Livro(id, preco, nome, descricao, dataRegistro, dataLancamento, genero, isbn13, autor, editora, sinopse);
 
