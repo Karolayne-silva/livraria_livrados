@@ -17,36 +17,44 @@ import java.util.List;
  * @author Gilmar Adrian
  *
  */
-/**
- * CRUD create read update delete
- */
+
 public class LivroDAO {
 
     public void cadastrar(Livro livro) {
-        String sql = "INSERT INTO livro(id, preco, nome, descricao, dataRegistro, dataLancamento, genero, isbn13, autor, editora, sinopse) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+        
+        String sql = "INSERT INTO produto(id, preco, nome, descricao, dataRegistro, dataLancamento, genero) VALUES (?, ?, ?, ?, ?, ?, ?); ";
+        String sql_l = "INSERT INTO livro( isbn13, autor, editora, sinopse, Produto_id) VALUES (?, ?, ?, ?, ?) ";
         Connection conn;
         PreparedStatement pstm;
+        PreparedStatement pstm_l;
 
         try {
             //cria uma conexao com o bd
             conn = Conexao.conectar();
             pstm = (PreparedStatement) conn.prepareStatement(sql);
+            pstm_l = (PreparedStatement) conn.prepareStatement(sql_l);
+            
             //executa a query
 
             //adiciona os valores que são esperados pela query
             pstm.setInt(1, livro.getId());
+            int id = livro.getId();
             pstm.setDouble(2, livro.getPreco());
             pstm.setString(3, livro.getNome());
             pstm.setString(4, livro.getDescricao());
             pstm.setString(5, livro.getDataRegistro());
-            pstm.setString(7, livro.getDataLancamento());
-            pstm.setString(8, livro.getGenero());
-            pstm.setString(9, livro.getIsbn13());
-            pstm.setString(10, livro.getAutor());
-            pstm.setString(11, livro.getEditora());
-            pstm.setString(12, livro.getSinopse());
+            pstm.setString(6, livro.getDataLancamento());
+            pstm.setString(7, livro.getGenero());
+            
+           
+            pstm_l.setString(1, livro.getIsbn13());
+            pstm_l.setString(2, livro.getAutor());
+            pstm_l.setString(3, livro.getEditora());
+            pstm_l.setString(4, livro.getSinopse());
+            pstm_l.setInt(5, id);
 
             pstm.execute();
+            pstm_l.execute();
             System.out.println("Livro salvo com sucesso");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -85,17 +93,29 @@ public class LivroDAO {
 
                 Livro obj_livro = new Livro(id, preco, nome, descricao, dataRegistro, dataLancamento, genero, isbn13, autor, editora, sinopse);
 
-                System.out.println(obj_livro.getId());
-                System.out.println(obj_livro.getPreco());
-                System.out.println(obj_livro.getNome());
-                System.out.println(obj_livro.getDescricao());
-                System.out.println(obj_livro.getDataRegistro());
-                System.out.println(obj_livro.getDataLancamento());
-                System.out.println(obj_livro.getGenero());
-                System.out.println(obj_livro.getIsbn13());
-                System.out.println(obj_livro.getAutor());
-                System.out.println(obj_livro.getEditora());
-                System.out.println(obj_livro.getSinopse());
+                System.out.println(cont+1 + "º LIVRO");
+                System.out.println("Id: " +obj_livro.getId());
+                System.out.println("-------------------------");
+                System.out.println("Preço: "+ obj_livro.getPreco());
+                System.out.println("-------------------------");
+                System.out.println("Nome: " +obj_livro.getNome());
+                System.out.println("-------------------------");
+                System.out.println("Descrição: " +obj_livro.getDescricao());
+                System.out.println("-------------------------");
+                System.out.println("Data de registro: " +obj_livro.getDataRegistro());
+                System.out.println("-------------------------");
+                System.out.println("Data de lançamento: " +obj_livro.getDataLancamento());
+                System.out.println("-------------------------");
+                System.out.println("Genêro: " +obj_livro.getGenero());
+                System.out.println("-------------------------");
+                System.out.println("ISBN13: "+ obj_livro.getIsbn13());
+                System.out.println("-------------------------");
+                System.out.println("Autor:" +obj_livro.getAutor());
+                System.out.println("-------------------------");
+                System.out.println("Editora:" +obj_livro.getEditora());
+                System.out.println("-------------------------");
+                System.out.println("Sinopse:" +obj_livro.getSinopse());
+                System.out.println("==-==-==-==-==-==-==-==-==");
 
                 arl_livros.add(cont, obj_livro);
                 cont++;

@@ -31,7 +31,6 @@ public class Teste {
             System.out.println("[2] ATUALIZAR");
             System.out.println("[3] DELETAR");
             System.out.println("[4] MOSTRAR TODOS OS LIVROS");
-            System.out.println("[5] SAIR");
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
             int numero = sc.nextInt();
 
@@ -118,10 +117,7 @@ public class Teste {
                     livro.mostrarLivros();
                     break;
                 }
-                case 5 -> {
-                    System.out.println("Fechando programa...");
-                    break;
-                }
+                
                 default -> {
                     System.out.println("Digite um número válido");
                 }
