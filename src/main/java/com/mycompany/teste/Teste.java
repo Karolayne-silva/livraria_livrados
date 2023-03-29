@@ -6,7 +6,9 @@ package com.mycompany.teste;
 
 /**
  *
- * @author kiki1
+ * @author Karolayne Silva
+ * @author Erika Santos
+ * @author Gilmar Adrian
  */
 public class Teste {
 

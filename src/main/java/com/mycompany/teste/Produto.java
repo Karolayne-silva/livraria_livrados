@@ -14,17 +14,15 @@ public class Produto {
 	private String nome;
 	private String descricao;
 	private String dataRegistro;
-	private int quantidade;
 	private String dataLancamento;
 	private String genero;
 
-    public Produto(int id, double preco, String nome, String descricao, String dataRegistro, int quantidade, String dataLancamento, String genero){
+    public Produto(int id, double preco, String nome, String descricao, String dataRegistro, String dataLancamento, String genero){
 	this.id = id;
 	this.preco = preco;
 	this.nome = nome;
 	this.descricao = descricao;
 	this.dataRegistro = dataRegistro;
-	this.quantidade = quantidade;
 	this.dataLancamento = dataLancamento;
 	this.genero = genero;
     }
@@ -36,7 +34,7 @@ public class Produto {
 	
     public String descricao() {
         return "Produto [id=" + id + ", preco=" + preco + ", nome=" + nome + ", descricao=" + descricao
-		+ ", dataRegistro=" + dataRegistro + ", quantidade=" + quantidade + ", dataLancamento=" + dataLancamento
+		+ ", dataRegistro=" + dataRegistro + ", dataLancamento=" + dataLancamento
 		 + ", genero=" + genero + "]";
     }
 
@@ -89,17 +87,6 @@ public class Produto {
     public void setDataRegistro(String dataRegistro) {
 		this.dataRegistro = dataRegistro;
     }
-
-
-    public int getQuantidade() {
-		return quantidade;
-    }
-
-
-    public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-    }
-
 
     public String getDataLancamento() {
 		return dataLancamento;
