@@ -155,16 +155,22 @@ public class LivroDAO {
     }
 
     public void deleteByID(int id) {
-        String sql = "DELETE FROM livros WHERE id = ?";
+        String sql = "DELETE FROM livraria_livrados.livro WHERE Produto_id = ?";
+        String sql_p = "DELETE FROM livraria_livrados.produto WHERE id = ?";;
         Connection conn = null;
         PreparedStatement pstm = null;
+        PreparedStatement pstm_p = null;
 
         try {
             conn = Conexao.conectar();
             pstm = (PreparedStatement) conn.prepareStatement(sql);
+            pstm_p = (PreparedStatement) conn.prepareStatement(sql_p);
 
             pstm.setInt(1, id);
             pstm.execute();
+            
+            pstm_p.setInt(1, id);
+            pstm_p.execute();
 
             System.out.println("Livro deletado com sucesso!");
 

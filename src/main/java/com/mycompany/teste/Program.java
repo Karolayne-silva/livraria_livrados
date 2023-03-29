@@ -64,6 +64,7 @@ public class Program {
                                     String dataL = sc.next();
                                     System.out.println("Genêro: ");
                                     String genero = sc.next();
+                                    sc.nextLine();
                                     System.out.println("ISBN13: ");
                                     String isbn = sc.next();
                                     System.out.println("Autor: ");
