@@ -78,7 +78,7 @@ public class LivroDAO {
             int cont = 0;
 
             while (rs.next()) {
-                
+
                 int id = rs.getInt("Produto_id");
                 double preco = rs.getDouble("preco");
                 String nome = rs.getString("nome");
@@ -127,6 +127,27 @@ public class LivroDAO {
         return arl_livros;
     }
 
+    public Livro buscarLivroNome(String nome) {
+
+        String consulta = "SELECT * FROM livraria_livrados.livro INNER JOIN livraria_livrados.produto ON produto.id = livro.Produto_id WHERE nome = ?;";
+        Connection conn;
+        PreparedStatement pstm;
+
+        try {
+            conn = Conexao.conectar();
+            pstm = (PreparedStatement) conn.prepareStatement(consulta);
+            
+            
+            int id = pstm.setInt(2, livro.getId());
+            Livro obj_livro = new Livro(0, 0, nome, consulta, consulta, nome, nome, nome, nome, nome, nome);
+            return obj_livro;
+            pstm.execute(consulta)
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void update(Livro livro) {
         String sql = "UPDATE livros set, nome = ?, descricao = ?, dataRegistro = ?, preco = ?, genero = ?, isbn13 = ?, autor = ?, editora = ?, sinopse = ?, dataLancamento = ? where id = ?";
         Connection conn;
@@ -156,8 +177,8 @@ public class LivroDAO {
 
     public void deleteByID(int id) {
         String sql = "DELETE FROM livros WHERE id = ?";
-        Connection conn = null;
-        PreparedStatement pstm = null;
+        Connection conn;
+        PreparedStatement pstm;
 
         try {
             conn = Conexao.conectar();
