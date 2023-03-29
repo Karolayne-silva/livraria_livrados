@@ -26,6 +26,9 @@ public class Livro extends Produto {
 
     }
 
+    public Livro(String nome) {
+        super(nome);
+    }
 
     public String getIsbn13() {
         return isbn13;
