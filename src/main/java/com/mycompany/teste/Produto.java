@@ -30,8 +30,10 @@ public class Produto {
         this.genero = genero;
     }
 
-    public Produto(String nome) {
-        this.nome = nome;
+    // Construtor usado pelo construtor de Livro, em que só são necessários o Id e o Preço
+    public Produto(int id, double preco) {
+        this.id = id;
+        this.preco = preco;
     }
 
     public String descricao() {

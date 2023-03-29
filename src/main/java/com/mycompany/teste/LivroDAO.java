@@ -128,23 +128,16 @@ public class LivroDAO {
     }
 
     public void update(Livro livro) {
-        String sql = "UPDATE livros set, nome = ?, descricao = ?, dataRegistro = ?, preco = ?, genero = ?, isbn13 = ?, autor = ?, editora = ?, sinopse = ?, dataLancamento = ? where id = ?";
+        String sql = "UPDATE produto SET preco = ? WHERE id = ?";
         Connection conn;
         PreparedStatement pstm;
 
         try {
             conn = Conexao.conectar();
             pstm = (PreparedStatement) conn.prepareStatement(sql);
+
+            pstm.setDouble(1, livro.getPreco());
             pstm.setInt(2, livro.getId());
-            pstm.setString(3, livro.getNome());
-            pstm.setString(4, livro.getDescricao());
-            pstm.setString(5, livro.getDataRegistro());
-            pstm.setDouble(6, livro.getPreco());
-            pstm.setString(7, livro.getGenero());
-            pstm.setString(8, livro.getIsbn13());
-            pstm.setString(9, livro.getEditora());
-            pstm.setString(10, livro.getSinopse());
-            pstm.setString(11, livro.getDataLancamento());
 
             pstm.execute();
             System.out.println("Livro atualizado com sucesso!");

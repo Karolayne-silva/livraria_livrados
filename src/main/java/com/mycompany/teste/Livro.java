@@ -26,8 +26,9 @@ public class Livro extends Produto {
 
     }
 
-    public Livro(String nome) {
-        super(nome);
+    // Construtor usado na função update
+    public Livro(int id, double preco) {
+        super(id, preco);
     }
 
     public String getIsbn13() {

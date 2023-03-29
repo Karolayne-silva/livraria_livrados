@@ -16,9 +16,9 @@ public class Program {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        
+
         String login1 = "teste", senha1 = "123";
-        String  login2, senha2;
+        String login2, senha2;
 
         //loop do login
         System.out.println("Bem vindo a Livraria LIVRADOS!");
@@ -80,33 +80,14 @@ public class Program {
                                     break;
                                 }
                                 case 2 -> {
-                                    System.out.println("ATUALIZAR LIVRO");
+                                    System.out.println("ATUALIZAR PREÇO DO LIVRO");
                                     LivroDAO ld = new LivroDAO();
-                
+
                                     System.out.println("Id: ");
                                     int id = sc.nextInt();
-                                    System.out.println("Preço  ");
+                                    System.out.println("Novo preço: ");
                                     double preco = sc.nextDouble();
-                                    System.out.println("Nome: ");
-                                    String nome = sc.next();
-                                    System.out.println("Descrição: ");
-                                    String desc = sc.nextLine();
-                                    System.out.println("Data de registro: ");
-                                    String dataR = sc.next();
-                                    System.out.println("Data de lançamento: ");
-                                    String dataL = sc.next();
-                                    System.out.println("Genêro: ");
-                                    String genero = sc.next();
-                                    System.out.println("ISBN13: ");
-                                    String isbn = sc.next();
-                                    System.out.println("Autor: ");
-                                    String autor = sc.next();
-                                    System.out.println("Editora: ");
-                                    String editora = sc.next();
-                                    System.out.println("Sinopse: ");
-                                    String sinopse = sc.nextLine();
-
-                                    Livro livro = new Livro(id, preco, nome, desc, dataR, dataL, genero, isbn, autor, editora, sinopse);
+                                    Livro livro = new Livro(id, preco);
                                     ld.update(livro);
                                     break;
                                 }
@@ -131,15 +112,15 @@ public class Program {
                                 }
                             }
                         }
-                        
-                    }else {
+
+                    } else {
                         System.out.println("Senha incorreta, insira novamente:");
+                    }
+                } while (!senha2.equals(senha1));
+            } else {
+                System.out.println("Login incorreto, insira novamente:");
             }
-                }while(!senha2.equals(senha1));
-            }else {
-            System.out.println("Login incorreto, insira novamente:");
-        }
-        }while(!login2.equals(login1));       
+        } while (!login2.equals(login1));
 
     }
 }
