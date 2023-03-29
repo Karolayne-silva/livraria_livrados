@@ -121,18 +121,19 @@ public class Teste {
                 case 6 -> {
                     System.out.println("PESQUISAR PELO NOME DO LIVRO");
                     System.out.print("Digite o nome do livro a ser procurado: ");
+                    // Limpeza do "buffer"
                     sc.nextLine();
-                    String inp_nome = sc.nextLine();
+                    String inp_nome = sc.nextLine(); // inp = input
 
-                    Livro dao_livro = new Livro();
-                    LivroDAO teste_livro = new LivroDAO();
-                    dao_livro = teste_livro.buscarLivroNome(inp_nome);
-                    
-//                    Livro obj_livro = new Livro(0, 0.0, inp_nome, "", "", "", "", "", "", "", "");
-//                    obj_livro = dao_livro.buscarLivroNome(inp_nome);
-//                    dao_livro.buscarLivroNome(obj_livro.getNome());
+                    LivroDAO dao_livro = new LivroDAO();
+                    Livro obj_livro = new Livro(inp_nome);
 
-                    System.out.println("Livro: " + teste_livro);
+                    obj_livro = dao_livro.buscarLivroNome(inp_nome);
+
+                    // Livro obj_livro = new Livro(0, 0.0, inp_nome, "", "", "", "", "", "", "", "");
+                    // obj_livro = dao_livro.buscarLivroNome(inp_nome);
+                    // dao_livro.buscarLivroNome(obj_livro.getNome());
+                    // System.out.println("Livro: " + dao_livro);
                 }
 
                 default -> {

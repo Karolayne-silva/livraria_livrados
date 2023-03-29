@@ -124,28 +124,40 @@ public class LivroDAO {
         return arl_livros;
     }
 
-    public Livro buscarLivroNome(String nome) {
+    public Livro buscarLivroNome(String var_nome) {
 
         String consulta = "SELECT * FROM livraria_livrados.livro INNER JOIN livraria_livrados.produto ON produto.id = livro.Produto_id WHERE nome = ?; ";
 
         Connection conn;
         PreparedStatement pstm;
         ResultSet rs;
-        Livro obj_livro = new Livro(0, 0, nome, "", "", "", "", "", "", "", "");
+        Livro obj_livro = new Livro(var_nome);
 
         try {
             conn = Conexao.conectar();
             pstm = (PreparedStatement) conn.prepareStatement(consulta);
+//            Resgatando atributo Nome do livro e passando como parâmetro para a query consulta
             pstm.setString(0, obj_livro.getNome());
-            
             rs = pstm.executeQuery(consulta);
-            
+
+            obj_livro.setId(rs.getInt("Produto_id"));
+            obj_livro.setPreco(rs.getDouble("preco"));
+            obj_livro.setNome(rs.getString("nome"));
+            obj_livro.setDescricao(rs.getString("descricao"));
+            obj_livro.setDataRegistro(rs.getString("dataRegistro"));
+            obj_livro.setDataLancamento(rs.getString("dataLancamento"));
+            obj_livro.setGenero(rs.getString("genero"));
+            obj_livro.setIsbn13(rs.getString("isbn13"));
+            obj_livro.setAutor(rs.getString("autor"));
+            obj_livro.setEditora(rs.getString("editora"));
+            obj_livro.setSinopse(rs.getString("sinopse"));
+
             rs.next();
 
-            int id = rs.getInt("Produto_id");
+//            int id = rs.getInt("Produto_id");
 //            Livro obj_livro = new Livro(0, 0, nome, consulta, consulta, nome, nome, nome, nome, nome, nome);
             pstm.execute(consulta);
-            System.out.println();
+            System.out.println("Consulta OK");
 
         } catch (Exception e) {
             e.printStackTrace();
