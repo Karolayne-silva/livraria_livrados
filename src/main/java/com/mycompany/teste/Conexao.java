@@ -25,10 +25,10 @@ public class Conexao {
     public static Connection conectar(){
         
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
              //cria a conexao com o banco de dados
             conn = DriverManager.getConnection("jdbc:mysql://localhost/livraria_livrados", "root", "teste");
-            
+              
             System.out.println("Conectou no banco de dados");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Não conseguiu conectar no BD. Erro: " + e);
